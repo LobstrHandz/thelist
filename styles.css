@@ -44,7 +44,8 @@ table {
   border: 1px solid darkgray;
   border-spacing: 0;
   background: rgb(240, 240, 240);
-  font-family: "Mynerve", serif;
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
   font-size: 24px;
   font-weight: 400;
   font-style: normal;
@@ -63,7 +64,8 @@ td {
 
 #loadingIndicator {
   margin-top: 128px;
-  font-family: "Mynerve", serif;
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
   font-size: 32px;
   font-weight: 400;
   font-style: normal;
