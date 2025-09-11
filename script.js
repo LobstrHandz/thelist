@@ -34,6 +34,7 @@
     }
   ];
 
+  const contentBlock = document.querySelector('#content');
   const listTable = document.querySelector('#list');
   const loadingIndicatorElement = document.querySelector('#loadingIndicator');
 
@@ -41,29 +42,12 @@
 
   function setLoadingIndicatorState(isLoading) {
     if (isLoading) {
-      listTable.classList.add('hidden');
+      contentBlock.classList.add('hidden');
       loadingIndicatorElement.classList.remove('hidden');
     } else {
-      listTable.classList.remove('hidden');
+      contentBlock.classList.remove('hidden');
       loadingIndicatorElement.classList.add('hidden');
     }
-  }
-
-  function createHeader() {
-    const row = document.createElement('tr');
-    const nameHeader = document.createElement('td');
-    const reasonHeader = document.createElement('td');
-    const dateHeader = document.createElement('td');
-
-    row.classList.add("header-row");
-    nameHeader.innerText = locale === 'en' ? 'Name': 'Имя';
-    reasonHeader.innerText = locale === 'en' ? 'Reason': 'Причина';
-    dateHeader.innerText = locale === 'en' ? 'Date': 'Дата';
-
-    row.appendChild(nameHeader);
-    row.appendChild(reasonHeader);
-    row.appendChild(dateHeader);
-    listTable.appendChild(row);
   }
 
   function addBitch(bitch) {
@@ -92,15 +76,46 @@
         locale = 'en';
         break;
     }
+
+    changeLocale(locale);
   }
 
-  function changeLocale() {
-    locale = locale === 'en' ? 'ru' : 'en';
+  function changeLocale(newLocale) {
+    locale = newLocale;
+
+    setLoadingIndicatorLocale();
+    setLoadingIndicatorState(true);
+    createTableHeader();
+
+    setTimeout(() => {
+    fillList();
+    }, 5000)
+  }
+
+  function setLoadingIndicatorLocale() {
+    const indicatorText = document.createElement('span');
+    indicatorText.innerText = `${locale === 'en' ? 'Loading' : 'Загрузка'}...`;
+    loadingIndicatorElement.appendChild(indicatorText);
+  }
+
+  function createTableHeader() {
+    const row = document.createElement('tr');
+    const nameHeader = document.createElement('td');
+    const reasonHeader = document.createElement('td');
+    const dateHeader = document.createElement('td');
+
+    row.classList.add("header-row");
+    nameHeader.innerText = locale === 'en' ? 'Name': 'Имя';
+    reasonHeader.innerText = locale === 'en' ? 'Reason': 'Причина';
+    dateHeader.innerText = locale === 'en' ? 'Date': 'Дата';
+
+    row.appendChild(nameHeader);
+    row.appendChild(reasonHeader);
+    row.appendChild(dateHeader);
+    listTable.appendChild(row);
   }
 
   function fillList() {
-    createHeader();
-
     for (const bitch of LIST) {
       addBitch(bitch[locale]);
     }
@@ -109,7 +124,4 @@
   }
 
   setInitialLocale();
-  fillList();
-  console.log(navigator.language);
-  
 })();

@@ -1,5 +1,18 @@
+@font-face {
+  font-family: 'Imperial Script';
+  src: url('./fonts/ImperialScript-Regular.ttf');
+}
+@font-face {
+  font-family: 'Caveat';
+  src: url('./fonts/Caveat-VariableFont_wght.ttf');
+}
+
 html {
   background: lightgray;
+}
+
+body {
+  margin: 0;
 }
 
 .fancy-font {
@@ -9,7 +22,13 @@ html {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header {
@@ -37,6 +56,7 @@ h1 {
 .table-wrapper {
   display: flex;
   justify-content: center;
+  max-width: 1024px;
 }
 
 table {
@@ -62,8 +82,11 @@ td {
   border-bottom: 1px solid lightsteelblue;
 }
 
-#loadingIndicator {
-  margin-top: 128px;
+.loadingIndicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   font-family: "Caveat", cursive;
   font-optical-sizing: auto;
   font-size: 32px;

@@ -2,33 +2,27 @@
 <html>
   <head>
     <title>The List of Lobstr</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Imperial+Script&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="fancy-font">
-      <div class="header">
-        <h3>The</h3>
-        <h1>List</h1>
-        <h3 style="text-align: center;">of</h3>
-        <h1>Lobstr</h1>
-      </div>
-    </header>
+    <div id="content" class="content hidden">
+      <header class="fancy-font">
+        <div class="header">
+          <h3>The</h3>
+          <h1>List</h1>
+          <h3 style="text-align: center;">of</h3>
+          <h1>Lobstr</h1>
+        </div>
+      </header>
 
-    <div class="table-wrapper">
-      <table id="list" class="hidden">
+      <div class="table-wrapper">
+        <table id="list">
 
-      </table>
-
-      <div id="loadingIndicator">
-        loading...
+        </table>
       </div>
     </div>
 
+    <div id="loadingIndicator" class="loadingIndicator hidden"></div>
 
     <script src="./script.js"></script>
   </body>
