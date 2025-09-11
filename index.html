@@ -2,11 +2,13 @@
 <html>
   <head>
     <title>The List of Lobstr</title>
+    <link rel="preload" href="./fonts/ImperialScript-Regular.ttf" as="font" type="font/ttf">
+    <link rel="preload" href="./fonts/Caveat-VariableFont_wght.ttf" as="font" type="font/ttf">
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div id="content" class="content hidden">
-      <header class="fancy-font">
+      <header>
         <div class="header">
           <h3>The</h3>
           <h1>List</h1>
@@ -16,13 +18,19 @@
       </header>
 
       <div class="table-wrapper">
+        <div class="language-select">
+          <span id="languageSelectEn">English</span>
+          /
+          <span id="languageSelectRu">Русский</span>
+        </div>
+
         <table id="list">
 
         </table>
       </div>
     </div>
 
-    <div id="loadingIndicator" class="loadingIndicator hidden"></div>
+    <div id="loadingIndicator" class="loading-indicator hidden"></div>
 
     <script src="./script.js"></script>
   </body>

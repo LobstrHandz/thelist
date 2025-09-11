@@ -13,10 +13,9 @@ html {
 
 body {
   margin: 0;
-}
-
-.fancy-font {
-  font-family: "Imperial Script", serif;
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-size: 24px;
   font-weight: 400;
   font-style: normal;
 }
@@ -35,6 +34,9 @@ header {
   display: flex;
   justify-content: center;
   margin-bottom: 32px;
+  font-family: "Imperial Script", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .header {
@@ -52,11 +54,26 @@ h1 {
   font-size: 6em;
 }
 
-
 .table-wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   max-width: 1024px;
+  margin-bottom: 64px;
+}
+
+.language-select {
+  margin-bottom: 24px;
+}
+
+.language-select span:hover {
+  cursor: pointer;
+  text-shadow: 0px 0px 5px;
+}
+
+.language-select span.selected {
+  color: darkblue;
+  text-decoration: underline;
 }
 
 table {
@@ -64,11 +81,6 @@ table {
   border: 1px solid darkgray;
   border-spacing: 0;
   background: rgb(240, 240, 240);
-  font-family: "Caveat", cursive;
-  font-optical-sizing: auto;
-  font-size: 24px;
-  font-weight: 400;
-  font-style: normal;
   color: darkblue;
 }
 
@@ -82,14 +94,10 @@ td {
   border-bottom: 1px solid lightsteelblue;
 }
 
-.loadingIndicator {
+.loading-indicator {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  font-family: "Caveat", cursive;
-  font-optical-sizing: auto;
   font-size: 32px;
-  font-weight: 400;
-  font-style: normal;
 }

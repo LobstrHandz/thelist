@@ -37,6 +37,8 @@
   const contentBlock = document.querySelector('#content');
   const listTable = document.querySelector('#list');
   const loadingIndicatorElement = document.querySelector('#loadingIndicator');
+  const languageSelectEnButton = document.querySelector('#languageSelectEn');
+  const languageSelectRuButton = document.querySelector('#languageSelectRu');
 
   let locale;
 
@@ -67,34 +69,46 @@
   }
 
   function setInitialLocale() {
+    let initialLocale;
     switch (navigator.language) {
       case 'ru':
       case 'ru-RU':
-        locale = 'ru';
+        initialLocale = 'ru';
         break;
       default:
-        locale = 'en';
+        initialLocale = 'en';
         break;
     }
 
-    changeLocale(locale);
+    changeLocale(initialLocale);
   }
 
   function changeLocale(newLocale) {
+    if (locale === newLocale) { return }
+
     locale = newLocale;
 
     setLoadingIndicatorLocale();
     setLoadingIndicatorState(true);
-    createTableHeader();
 
-    setTimeout(() => {
-    fillList();
-    }, 5000)
+    switch(locale) {
+      case 'ru':
+        languageSelectRuButton.classList.add('selected');
+        languageSelectEnButton.classList.remove('selected');
+        break;
+      default:
+        languageSelectEnButton.classList.add('selected');
+        languageSelectRuButton.classList.remove('selected');
+      break;
+    }
+
+    rebuildList();
   }
 
   function setLoadingIndicatorLocale() {
     const indicatorText = document.createElement('span');
     indicatorText.innerText = `${locale === 'en' ? 'Loading' : 'Загрузка'}...`;
+    loadingIndicatorElement.innerHTML = '';
     loadingIndicatorElement.appendChild(indicatorText);
   }
 
@@ -116,12 +130,33 @@
   }
 
   function fillList() {
-    for (const bitch of LIST) {
-      addBitch(bitch[locale]);
+    for (const stupidIdiot of LIST) {
+      addBitch(stupidIdiot[locale]);
     }
 
     setLoadingIndicatorState(false);
   }
+  
+  function rebuildList() {
+    listTable.innerHTML = '';
+    createTableHeader();
+    fillList();
+  }
+
 
   setInitialLocale();
+  languageSelectEnButton.addEventListener('click', () => {
+    if (locale === 'en') { return }
+
+    languageSelectRuButton.classList.remove('selected');
+    changeLocale('en');
+    languageSelectEnButton.classList.add('selected');
+  })
+  languageSelectRuButton.addEventListener('click', () => {
+    if (locale === 'ru') { return }
+
+    languageSelectEnButton.classList.remove('selected');
+    changeLocale('ru');
+    languageSelectRuButton.classList.add('selected');
+  })
 })();
