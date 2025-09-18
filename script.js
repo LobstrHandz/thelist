@@ -1,7 +1,7 @@
 (() => {
   const LIST = [
     {
-      ru: { name: 'artur.nyaorim', reason: 'За то что был сучкой, эвакуировался и оставил своих тиммейтов', date: '10.02.2025' },
+      ru: { name: 'artur.nyaorim', reason: 'За то, что был сучкой, эвакуировался и оставил своих тиммейтов', date: '10.02.2025' },
       en: { name: 'artur.nyaorim', reason: 'For being a bitch, extracting and leaving teammates behind', date: '10.02.2025' }
     },
     {
@@ -17,7 +17,7 @@
       en: { name: 'Alexandra the forewoman', reason: 'For being bad at planning and documenting works at my new apartment and causing me a lot of stress', date: '12.02.2025' }
     },
     { 
-      ru: { name: 'Юлия из компании, которая делала мне окна', reason: 'За то что невероятно плохо делает свою работу и задержку установки на 5 месяцев', date: '17.04.2025' },
+      ru: { name: 'Юлия из компании, которая делала мне окна', reason: 'За то, что невероятно плохо делает свою работу и задержку установки на 5 месяцев', date: '17.04.2025' },
       en: { name: 'Julia from company that did my windows', reason: 'For being incredibly bad at her job and delaying the installation for 5 months', date: '17.04.2025' }
     },
     {
@@ -29,8 +29,20 @@
       en: { name: 'Workers that did my bathroom', reason: 'For having their hands growing from their asses thus fucking up the box around the plumbing', date: '05.08.2025' }
     },
     {
-      ru: { name: 'Brings или как его там', reason: 'За то что маленькая плаксивая сучка с глаголом в качестве никнейма. Кто бл использует глагол в качестве никнейма?', date: '05.08.2025' },
+      ru: { name: 'Brings или как его там', reason: 'За то, что маленькая плаксивая сучка с глаголом в качестве никнейма. Кто бл использует глагол в качестве никнейма?', date: '05.08.2025' },
       en: { name: 'Brings or whatever the name was', reason: 'For being a dumb whiny bitch and having a verb as a nickname. Who tf uses verb as a nickname?', date: '05.08.2025' }
+    },
+    {
+      ru: { name: 'Рабочие, которых нам посоветовал Антон', reason: 'За то, что в пустую тратят время вместо того чтобы прямо сказать что они не будут со мной работать', date: '18.09.2025' },
+      en: { name: 'Workers that Anton recommended', reason: 'For wasting time instead of outright saying they\'re not gonna work with me', date: '18.09.2025' }
+    },
+    {
+      ru: { name: 'Все до единой автошколы в Ульяновске', reason: 'За то, что не берут трубку и не чинят свои сайты', date: '18.09.2025' },
+      en: { name: 'Every single driving school in Ulyanovsk', reason: 'For not picking up the phone and not fixing their websites', date: '18.09.2025' }
+    },
+    {
+      ru: { name: 'Приставы по Ленинскому Району', reason: 'За то, что ленятся и не делают свою работу', date: '18.09.2025' },
+      en: { name: 'Leninsky district bailiffs', reason: 'For being lazy and not doing their job', date: '18.09.2025' }
     }
   ];
 
